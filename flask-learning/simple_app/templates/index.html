@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Simple App Home Page</title>
+    <title>Flask With Template</title>
 </head>
 <body>
-<p>This is Home Page</p>
-    {% if name&&error%}
-        <h1>hello {{ name }}</h1>
-    {% else %}
-        <h1>{{ error }}</h1>
-    {% endif %}
+    <h1>{{ content }}</h1>
 </body>
 </html>
