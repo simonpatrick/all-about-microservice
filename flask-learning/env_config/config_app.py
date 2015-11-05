@@ -9,3 +9,8 @@ config_app = Flask(__name__)
 def index():
     return "welcome configuration page"
 
+
+# # todo APIs
+# - user
+# - configuration
+# - search
