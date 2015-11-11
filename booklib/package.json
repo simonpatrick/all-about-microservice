@@ -1,0 +1,23 @@
+{
+  "name": "booklib-sample",
+  "version": "1.0.0",
+  "description": "sample for learning spring-boot web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.1.0",
+    "nib": "^1.1.0",
+    "ramda": "^0.18.0",
+    "rimraf": "^2.4.3"
+  }
+}

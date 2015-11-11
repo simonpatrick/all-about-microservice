@@ -1,0 +1,19 @@
+<md-content class="books" layout="column">
+  <md-content class="md-padding search-box" layout="row" layout-align="center center">
+    <input flex="33" md-maxlength="120" name="search.query" ng-model="term">
+    <md-button ng-click="search">Search</md-button>
+  </md-content>
+  <md-content books-shelf books="books" layout-align="center" layout="row" class="books">
+    <div class="book">
+      <a href="">
+        <div class="book-wrapper">
+          <img ng-src="{{book.iconUrl}}" class="animation-fade" image-loaded loadedclass="animation-faded">
+        </div>
+        <div class="book-description">
+          <h5>{{book.title}}</h3>
+          <p>{{book.notes}}</p>
+        </div>
+      </a>
+    </div>
+  </md-content>
+</md-content>
