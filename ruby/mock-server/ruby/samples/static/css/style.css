@@ -1,0 +1,23 @@
+header {
+    height:100px;
+    line-height: 100px;
+    text-align: center;
+    width: 100px;
+}
+
+main aside {
+    float:left;
+    width: 15%;
+}
+
+main section{
+    float:left;
+    width: 15%;
+}
+
+footer {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+}

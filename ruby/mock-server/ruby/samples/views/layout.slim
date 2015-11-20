@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title=@title||"Sinatra Demo"
+    link rel="stylesheet" href="/css/style.css"
+  body
+    header=@title||"Sinatra Demo"
+    main
+      aside
+        ul
+          ui
+            a href="/about"="about"
+      section
+        ==yield
+    footer
