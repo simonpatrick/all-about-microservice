@@ -1,5 +1,6 @@
 package io.hedwig.springsamples.angularjs.domain;
 
+import io.hedwig.springsamples.angularjs.repositories.BookRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -19,13 +20,8 @@ class DummyBookRepository implements BookRepository {
 
   @Override
   public List<Book> findAll() {
-    List<Book> books = new ArrayList<Book>(this.books.values());
-    Collections.sort(books, new Comparator<Book>() {
-      @Override
-      public int compare(Book o1, Book o2) {
-        return o1.getId() - o2.getId();
-      }
-    });
+    List<Book> books = new ArrayList<>(this.books.values());
+    Collections.sort(books, (o1, o2) -> o1.getId() - o2.getId());
     return books;
   }
 

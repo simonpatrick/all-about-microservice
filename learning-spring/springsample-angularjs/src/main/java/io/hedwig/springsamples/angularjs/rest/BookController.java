@@ -1,5 +1,7 @@
 package io.hedwig.springsamples.angularjs.rest;
 
+import io.hedwig.springsamples.angularjs.domain.Book;
+import io.hedwig.springsamples.angularjs.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -16,55 +18,58 @@ import java.util.List;
 @RequestMapping("/books")
 public class BookController {
 
-  @Autowired
-  BookRepository bookRepository;
+    @Autowired
+    BookRepository bookRepository;
 
-  @RequestMapping(method = RequestMethod.GET)
-  public @ResponseBody List<Book> list() {
-    return this.bookRepository.findAll();
-  }
-
-  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-  public @ResponseBody Book find(@PathVariable("id") Integer id) {
-    Book book = this.bookRepository.findById(id);
-    if (book == null) {
-      throw new BookNotFoundException(id);
+    @RequestMapping(method = RequestMethod.GET)
+    public @ResponseBody
+    List<Book> list() {
+        return this.bookRepository.findAll();
     }
-    return book;
-  }
 
-  @RequestMapping(method = RequestMethod.POST, consumes = {"application/json"})
-  @ResponseStatus(HttpStatus.CREATED)
-  public HttpEntity<?> create(@RequestBody Book book, @Value("#{request.requestURL}") StringBuffer parentUri) {
-    book = this.bookRepository.save(book);
-    HttpHeaders headers = new HttpHeaders();
-    headers.setLocation(childLocation(parentUri, book.getId()));
-    return new HttpEntity<Object>(headers);
-  }
-
-  @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-  @ResponseStatus(HttpStatus.NO_CONTENT)
-  public void delete(@PathVariable("id") Integer id) {
-    this.bookRepository.delete(id);
-  }
-
-  @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-  @ResponseStatus(HttpStatus.NO_CONTENT)
-  public void update(@PathVariable("id") Integer id, @RequestBody Book book) {
-    book.setId(id);
-    this.bookRepository.save(book);
-  }
-
-
-  private URI childLocation(StringBuffer parentUri, Object childId) {
-    UriTemplate uri = new UriTemplate(parentUri.append("/{childId}").toString());
-    return uri.expand(childId);
-  }
-
-  @ResponseStatus(HttpStatus.NOT_FOUND)
-  public class BookNotFoundException extends RuntimeException {
-    public BookNotFoundException(Integer id) {
-      super("Book '" + id + "' not found.");
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    Book find(@PathVariable("id") Integer id) {
+        Book book = this.bookRepository.findById(id);
+        if (book == null) {
+            throw new BookNotFoundException(id);
+        }
+        return book;
     }
-  }
+
+    @RequestMapping(method = RequestMethod.POST, consumes = {"application/json"})
+    @ResponseStatus(HttpStatus.CREATED)
+    public HttpEntity<?> create(@RequestBody Book book, @Value("#{request.requestURL}") StringBuffer parentUri) {
+        book = this.bookRepository.save(book);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(childLocation(parentUri, book.getId()));
+        return new HttpEntity<>(headers);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") Integer id) {
+        this.bookRepository.delete(id);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@PathVariable("id") Integer id, @RequestBody Book book) {
+        book.setId(id);
+        this.bookRepository.save(book);
+    }
+
+
+    private URI childLocation(StringBuffer parentUri, Object childId) {
+        UriTemplate uri = new UriTemplate(parentUri.append("/{childId}").toString());
+        return uri.expand(childId);
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public class BookNotFoundException extends RuntimeException {
+        public BookNotFoundException(Integer id) {
+            super("Book '" + id + "' not found.");
+        }
+    }
 }

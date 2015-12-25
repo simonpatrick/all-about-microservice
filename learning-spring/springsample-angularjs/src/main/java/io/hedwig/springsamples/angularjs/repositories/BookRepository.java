@@ -1,4 +1,6 @@
-package io.hedwig.springsamples.angularjs.domain;
+package io.hedwig.springsamples.angularjs.repositories;
+
+import io.hedwig.springsamples.angularjs.domain.Book;
 
 import java.util.List;
 
