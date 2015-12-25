@@ -1,0 +1,11 @@
+{
+  "apiId":123455,
+  "apiName":"testAPI",
+  "apiURL":"/test/",
+  "apiDomainName":"testDomain",
+  "apiMethod":"GET",
+  "apiRequestBody":"a sample file or a json sample",
+  "apiAcceptType":"application/json",
+  "apiContentType":"application/json",
+  "apiStatus":"active"
+}
