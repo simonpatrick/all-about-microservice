@@ -12,6 +12,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration
 @EnableJpaRepositories(basePackages = "io.hedwig.blog.repository")
 @EnableAutoConfiguration
-@EntityScan(basePackages = "io.hedwig.blog.domain")
+@EntityScan(basePackages = "io.hedwig.io.hedwig.blog.domain")
 public class RepositoryConfig {
 }
