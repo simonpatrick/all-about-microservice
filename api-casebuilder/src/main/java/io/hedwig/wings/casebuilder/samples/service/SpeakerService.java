@@ -3,6 +3,7 @@ package io.hedwig.wings.casebuilder.samples.service;
 import io.hedwig.wings.casebuilder.samples.domain.Speaker;
 import io.hedwig.wings.casebuilder.samples.domain.SpeakerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.function.Function;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 /**
  * Created by patrick on 15/12/28.
  */
+@Service
 public class SpeakerService {
 
     @Autowired
