@@ -1,9 +1,11 @@
 package io.hedwig.wings.casebuilder.samples;
 
 import io.hedwig.wings.casebuilder.BaseTest;
+import io.hedwig.wings.casebuilder.CaseBuilderApplication;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -14,9 +16,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by patrick on 15/12/25.
- * //todo MockMVC testing
  */
-public class HelloControllerTest extends BaseTest {
+@SpringApplicationConfiguration(classes = CaseBuilderApplication.class)
+public class HelloControllerTestNoMock extends BaseTest {
 
     @Value("${local.server.port}")
     private int port;

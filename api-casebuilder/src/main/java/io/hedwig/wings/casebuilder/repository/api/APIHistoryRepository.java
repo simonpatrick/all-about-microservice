@@ -5,5 +5,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 /**
  * Created by patrick on 15/12/25.
  */
-public interface APIHistoryRepository extends PagingAndSortingRepository {
-}
+//public interface APIHistoryRepository extends PagingAndSortingRepository {
+//}

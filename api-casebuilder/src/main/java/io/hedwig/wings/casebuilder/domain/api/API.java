@@ -8,7 +8,6 @@ import javax.persistence.Entity;
  * Created by patrick on 15/12/25.
  */
 
-@Entity(name = "api")
 public class API extends BaseAuditableEntity{
 
     private String apiId ;
