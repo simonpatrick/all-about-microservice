@@ -3,19 +3,18 @@
 ## Assert
 
 ```
-    GET /asset
-    POST /asset
-    PUT /asset
-    Delete /assert
+   - GET /asset
+   - POST /asset
+   - PUT /asset
+   - Delete /assert
 ```
 
 - create asset
 - update asset
 - get assert list
-- deactive asset
+- de-active asset
 
 ## configuration
-
 
 ## workflow
 
@@ -29,7 +28,6 @@
     * python restful api
     * vuejs
     * bootstrap
-    
     
 - tables
 
