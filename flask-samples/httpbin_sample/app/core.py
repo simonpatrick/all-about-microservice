@@ -558,8 +558,8 @@ def range_request(numbytes):
     request_headers = get_headers()
     first_byte_pos, last_byte_pos = get_request_range(request_headers, numbytes)
 
-    if first_byte_pos > last_byte_pos or first_byte_pos not in range(0, numbytes) or last_byte_pos not in xrange(0,
-                                                                                                                 numbytes):
+    if first_byte_pos > last_byte_pos or first_byte_pos not in range(0, numbytes) or last_byte_pos not in range(0,
+                                                                                                                numbytes):
         response = Response(headers={
             'ETag': 'range%d' % numbytes,
             'Accept-Ranges': 'bytes',
