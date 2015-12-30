@@ -1,0 +1,58 @@
+/*navigation*/
+.navbar-brand {
+    font-size: 20px;
+}
+
+.navbar-default .navbar-brand {
+    color: #7aff4d;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #16ffb4;
+}
+
+#menu_container {
+    background: #2e3c4e;
+}
+
+#sidebar_container {
+    margin-top: 42px;
+}
+
+/*.select2-container{*/
+/*width: 100% !important;*/
+/*}*/
+/*button.detail{*/
+/*margin-left: 10px;*/
+/*}*/
+/*.sweet-alert h2{*/
+/*margin-top: 30px;*/
+/*}*/
+
+.table {
+    margin-top: 10px;
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.progress-reboot {
+    position: absolute;
+    height: 2px;
+    top: 0px;
+    background: #337ab7;
+    width: 0%;
+    z-index: 2000;
+}
+
+#main-content {
+    overflow-x: auto;
+}
+
+#main-content .add-btn {
+    position: absolute;
+    z-index: 100;
+    width: 200px;
+}
+
