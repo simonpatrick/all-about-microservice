@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/vendor/metismenu/metisMenu.min.css">
-    <link rel="stylesheet" href="../static/vendor/sb-admin-2/css/sb-admin-2.css">
-    <link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../app/static/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../app/static/vendor/metismenu/metisMenu.min.css">
+    <link rel="stylesheet" href="../app/static/vendor/sb-admin-2/css/sb-admin-2.css">
+    <link rel="stylesheet" href="../app/static/vendor/font-awesome/css/font-awesome.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -151,36 +151,44 @@
     </nav>
 
     <div id="page-wrapper">
-        <div class="row" id="asset_info">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    添加资产:
-                </div>
-                <div class="panel-body">
-                    <form role="form">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div>
-                                    <label for="category">选择资产种类</label>
-                                    <select name="category" v-model="asset_category" class="form-control">
-                                        <option v-for="category in assets_category">{{ category }}</option>
-                                    </select>
-                                </div>
-                            </div>
+        <div class="row" id="assets_info">
+            <div class="col-lg-12">
+                <h1 class="page-header">资产列表</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            资产详细信息
                         </div>
-                        <button type="submit" class="btn btn-default">Submit Button</button>
-                        <button type="reset" class="btn btn-default">Reset Button</button>
-                    </form>
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th v-for="attribute in asset_attributes">{{ attribute}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="odd gradeX" v-for="info in assets_info">
+                                    <td v-for="attribute in asset_attributes">{{ info[attribute] }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script src="../static/vendor/jquery/jquery.min.js"></script>
-<script src="../static/vendor/vue/vue.min.js"></script>
-<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="../static/vendor/metismenu/metisMenu.js"></script>
-<script src="../static/vendor/sb-admin-2/js/sb-admin-2.js"></script>
-<script src="../static/js/assetCategory.js"></script>
+<script src="../app/static/vendor/jquery/jquery.min.js"></script>
+<script src="../app/static/vendor/vue/vue.min.js"></script>
+<script src="../app/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../app/static/vendor/metismenu/metisMenu.js"></script>
+<script src="../app/static/vendor/sb-admin-2/js/sb-admin-2.js"></script>
+<script src="../app/static/js/asset.js"></script>
 </body>
 </html>
