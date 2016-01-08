@@ -84,17 +84,18 @@
             </exclusions>
         </dependency>
 
-        <!-- Thymeleaf Spring Security Dialect -->
-        <dependency>
-            <groupId>org.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-springsecurity3</artifactId>
-        </dependency>
+        <!--&lt;!&ndash; Thymeleaf Spring Security Dialect &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.thymeleaf.extras</groupId>-->
+            <!--<artifactId>thymeleaf-extras-springsecurity3</artifactId>-->
+            <!--<version></version>-->
+        <!--</dependency>-->
 
-        <!-- Thymeleaf - Internet Explorer conditional comments -->
-        <dependency>
-            <groupId>org.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-conditionalcomments</artifactId>
-        </dependency>
+        <!--&lt;!&ndash; Thymeleaf - Internet Explorer conditional comments &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.thymeleaf.extras</groupId>-->
+            <!--<artifactId>thymeleaf-extras-conditionalcomments</artifactId>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -232,6 +233,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-social-linkedin</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>jcache</artifactId>
+            <version>1.0.0</version>
+            <!--<scope>runtime</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -349,7 +365,7 @@
                        The `git.*` maven properties are available in all modules.
                        Default value is `false`.
                     -->
-                    <runOnlyOnce>false</runOnlyOnce>
+                    <!--<runOnlyOnce>false</runOnlyOnce>-->
 
                     <!-- @since 2.1.9 -->
                     <!--

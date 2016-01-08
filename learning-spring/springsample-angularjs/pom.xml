@@ -41,7 +41,7 @@
         <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
         <skip.integration.tests>false</skip.integration.tests>
         <skip.unit.tests>false</skip.unit.tests>
-        <springboot.version>1.3.0.RELEASE</springboot.version>
+        <springboot.version>1.3.1.RELEASE</springboot.version>
     </properties>
 
     <dependencies>

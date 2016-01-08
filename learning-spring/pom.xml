@@ -11,13 +11,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.7.RELEASE</version>
+        <version>1.3.1.RELEASE</version>
     </parent>
 
     <properties>
         <!--<start-class>session.boot.BootSessionApplication</start-class>-->
         <jdk.version>1.8</jdk.version>
-        <springboot.version>1.2.7.RELEASE</springboot.version>
+        <springboot.version>1.3.1.RELEASE</springboot.version>
         <springsession.version>1.0.2.RELEASE</springsession.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -89,8 +89,10 @@
 
     <modules>
         <module>spring-sessions</module>
-        <module>enhanced-petclinic</module>
+        <!--<module>enhanced-petclinic</module>-->
         <module>springsample-angularjs</module>
+        <module>jms-samples</module>
+        <module>boot-confsamples</module>
     </modules>
 
 
