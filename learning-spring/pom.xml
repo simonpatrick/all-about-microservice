@@ -89,10 +89,11 @@
 
     <modules>
         <module>spring-sessions</module>
-        <!--<module>enhanced-petclinic</module>-->
         <module>springsample-angularjs</module>
         <module>jms-samples</module>
         <module>boot-confsamples</module>
+        <module>liquidbase-samples</module>
+        <module>data-samples</module>
     </modules>
 
 
