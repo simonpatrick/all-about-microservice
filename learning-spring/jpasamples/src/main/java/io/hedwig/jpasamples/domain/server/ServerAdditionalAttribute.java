@@ -22,6 +22,9 @@ public class ServerAdditionalAttribute  extends AbstractAuditingEntity {
     @Column(name = "status")
     private boolean status;
 
+    @Column(name = "server_server_type")
+    private String serverType;
+
     public long getId() {
         return id;
     }
@@ -52,5 +55,13 @@ public class ServerAdditionalAttribute  extends AbstractAuditingEntity {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public String getServerType() {
+        return serverType;
+    }
+
+    public void setServerType(String serverType) {
+        this.serverType = serverType;
     }
 }
