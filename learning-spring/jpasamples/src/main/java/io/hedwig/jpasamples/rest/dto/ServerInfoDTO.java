@@ -38,8 +38,8 @@ public class ServerInfoDTO {
     private String account;
     private String accountPassword;
     private String serverUsageComments;
-    private String status;
-    private Map<String,String> serverAddlValues;
+    private int status;
+    private Map<String, String> serverAddlValues;
 
     public long getId() {
         return id;
@@ -185,13 +185,6 @@ public class ServerInfoDTO {
         this.serverUsageComments = serverUsageComments;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public Map<String, String> getServerAddlValues() {
         return serverAddlValues;
@@ -199,5 +192,13 @@ public class ServerInfoDTO {
 
     public void setServerAddlValues(Map<String, String> serverAddlValues) {
         this.serverAddlValues = serverAddlValues;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }
