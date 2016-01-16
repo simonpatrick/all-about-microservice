@@ -1,16 +1,18 @@
 package io.hedwig.jpasamples.service;
 
-import io.hedwig.jpasamples.domain.server.ServerAdditionalAttribute;
 import io.hedwig.jpasamples.domain.server.ServerAdditionalAttributeValue;
 import io.hedwig.jpasamples.domain.server.ServerInfo;
-import io.hedwig.jpasamples.repository.server.ServerAddlAttrRepository;
+import io.hedwig.jpasamples.enums.Status;
 import io.hedwig.jpasamples.repository.server.ServerAddlAttrValueRepository;
 import io.hedwig.jpasamples.repository.server.ServerInfoRepository;
+import io.hedwig.jpasamples.service.predicates.EntityPredicates;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static io.hedwig.jpasamples.tools.CollectionsHelper.parseToList;
 
@@ -26,21 +28,28 @@ public class ServerInfoService {
     @Autowired
     private ServerAddlAttrValueRepository serverAddlAttrValueRepository;
 
-    @Autowired
-    private ServerAddlAttrRepository serverAdditionalAttribute;
 
-    public List<ServerInfo> findServerInfoByIds(String ids){
+    /**
+     * 获取ServerInfo
+     *
+     * @param ids
+     * @param status
+     * @return
+     */
+    public List<ServerInfo> findServerInfoByIdsAndStatus(String ids, Status status) {
         //validator
-       return serverInfoRepository.findAll(parseToList(ids,","));
+        return serverInfoRepository.findAll(parseToList(ids, ","))
+                .stream().filter(EntityPredicates.statusPredicate(status)
+                ).collect(Collectors.toList());
     }
 
-    public List<ServerAdditionalAttributeValue> findServerAddlValue(String ids){
+    public List<ServerAdditionalAttributeValue> findServerAddlValueByIdsAndStatus(String ids
+            , Status status) {
         //validator
-        return serverAddlAttrValueRepository.findAll(parseToList(ids,","));
+        return serverAddlAttrValueRepository.findAll(parseToList(ids, ","))
+                .stream().filter(EntityPredicates.statusPredicate(status))
+                .collect(Collectors.toList());
     }
 
-    public List<ServerAdditionalAttribute> findServerAttributes(String serverType){
-        return Collections.emptyList();
-    }
 
 }

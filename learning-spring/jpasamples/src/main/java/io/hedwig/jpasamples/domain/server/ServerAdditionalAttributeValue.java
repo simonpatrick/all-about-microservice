@@ -3,6 +3,7 @@ package io.hedwig.jpasamples.domain.server;
 import io.hedwig.jpasamples.domain.AbstractAuditingEntity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by patrick on 16/1/15.
@@ -13,43 +14,60 @@ public class ServerAdditionalAttributeValue extends AbstractAuditingEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     @Column(name = "server_info_id")
-    private long serverInfoId;
-    @Column(name = "server_additional_attribute_id")
-    private long serverAdditionalAttributeId;
-    @Column(name = "status")
-    private boolean status;
+    private Long serverInfoId;
+//    @Column(name = "server_additional_attribute_id")
+//    private Long serverAdditionalAttributeId;
 
-    public long getId() {
+    //todo learn join
+    @Column(name = "server_additional_attribute_Name")
+    private String serverAdditionalAttributeName;
+
+    @NotNull
+    @Column(name = "server_additional_attribute_value")
+    private String serverAdditionalAttributeValue;
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public long getServerInfoId() {
+    public Long getServerInfoId() {
         return serverInfoId;
     }
 
-    public void setServerInfoId(long serverInfoId) {
+    public void setServerInfoId(Long serverInfoId) {
         this.serverInfoId = serverInfoId;
     }
+//
+//    public Long getServerAdditionalAttributeId() {
+//        return serverAdditionalAttributeId;
+//    }
+//
+//    public void setServerAdditionalAttributeId(Long serverAdditionalAttributeId) {
+//        this.serverAdditionalAttributeId = serverAdditionalAttributeId;
+//    }
 
-    public long getServerAdditionalAttributeId() {
-        return serverAdditionalAttributeId;
+
+    public String getServerAdditionalAttributeValue() {
+        return serverAdditionalAttributeValue;
     }
 
-    public void setServerAdditionalAttributeId(long serverAdditionalAttributeId) {
-        this.serverAdditionalAttributeId = serverAdditionalAttributeId;
+    public void setServerAdditionalAttributeValue(String serverAdditionalAttributeValue) {
+        this.serverAdditionalAttributeValue = serverAdditionalAttributeValue;
     }
 
-    public boolean isStatus() {
-        return status;
+    public String getServerAdditionalAttributeName() {
+        return serverAdditionalAttributeName;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setServerAdditionalAttributeName(String serverAdditionalAttributeName) {
+        this.serverAdditionalAttributeName = serverAdditionalAttributeName;
     }
+
 }

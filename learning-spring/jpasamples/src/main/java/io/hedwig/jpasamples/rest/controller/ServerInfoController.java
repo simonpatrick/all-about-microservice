@@ -32,11 +32,4 @@ public class ServerInfoController {
     }
 
 
-    public ServerInfoService getServerInfoService() {
-        return serverInfoService;
-    }
-
-    public void setServerInfoService(ServerInfoService serverInfoService) {
-        this.serverInfoService = serverInfoService;
-    }
 }

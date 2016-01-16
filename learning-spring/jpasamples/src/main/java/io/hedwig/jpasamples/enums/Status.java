@@ -12,4 +12,11 @@ public enum Status {
         this.statusValue=statusValue;
     }
 
+    public int getStatusValue() {
+        return statusValue;
+    }
+
+    public void setStatusValue(int statusValue) {
+        this.statusValue = statusValue;
+    }
 }

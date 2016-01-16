@@ -17,8 +17,6 @@ public class Site extends AbstractAuditingEntity{
     private String siteName;
     @Column(name = "site_domain_name")
     private String siteDomainName;
-    @Column(name = "status")
-    private String status;
     @Column(name = "site_comments")
     private String siteComments;
 
@@ -46,14 +44,6 @@ public class Site extends AbstractAuditingEntity{
         this.siteDomainName = siteDomainName;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public String getSiteComments() {
         return siteComments;
     }
@@ -61,4 +51,5 @@ public class Site extends AbstractAuditingEntity{
     public void setSiteComments(String siteComments) {
         this.siteComments = siteComments;
     }
+
 }

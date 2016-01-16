@@ -3,6 +3,7 @@ package io.hedwig.jpasamples.domain.server;
 import io.hedwig.jpasamples.domain.AbstractAuditingEntity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by patrick on 16/1/15.
@@ -14,15 +15,12 @@ public class ServerAdditionalAttribute  extends AbstractAuditingEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotNull
     @Column(name = "server_additional_attribute_name")
     private String serverAdditionalAttributeName;
 
-    @Column(name = "server_additional_attribute_value")
-    private String serverAdditionalAttributeValue;
-    @Column(name = "status")
-    private boolean status;
-
-    @Column(name = "server_server_type")
+    @NotNull
+    @Column(name = "server_type")
     private String serverType;
 
     public long getId() {
@@ -41,22 +39,6 @@ public class ServerAdditionalAttribute  extends AbstractAuditingEntity {
         this.serverAdditionalAttributeName = serverAdditionalAttributeName;
     }
 
-    public String getServerAdditionalAttributeValue() {
-        return serverAdditionalAttributeValue;
-    }
-
-    public void setServerAdditionalAttributeValue(String serverAdditionalAttributeValue) {
-        this.serverAdditionalAttributeValue = serverAdditionalAttributeValue;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
     public String getServerType() {
         return serverType;
     }
@@ -64,4 +46,5 @@ public class ServerAdditionalAttribute  extends AbstractAuditingEntity {
     public void setServerType(String serverType) {
         this.serverType = serverType;
     }
+
 }

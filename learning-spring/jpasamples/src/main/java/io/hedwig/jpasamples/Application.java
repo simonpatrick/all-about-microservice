@@ -24,6 +24,7 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
+    //how to change it from runtime? MXBean? JMX?
     @Bean
     public JettyEmbeddedServletContainerFactory jettyEmbeddedServletContainerFactory(@Value("${server.port:8043}") final String port,
                                                                                      @Value("${jetty.threadPool.maxThreads:200}") final String maxThreads,

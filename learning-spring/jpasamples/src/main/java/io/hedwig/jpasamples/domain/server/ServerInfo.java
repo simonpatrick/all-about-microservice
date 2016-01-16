@@ -49,8 +49,6 @@ public class ServerInfo extends AbstractAuditingEntity {
     private String accountPassword;
     @Column(name = "server_usage_comments")
     private String serverUsageComments;
-    @Column(name = "server_status")
-    private String status;
 
     public long getId() {
         return id;
@@ -197,11 +195,4 @@ public class ServerInfo extends AbstractAuditingEntity {
         this.serverHD2 = serverHD2;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }

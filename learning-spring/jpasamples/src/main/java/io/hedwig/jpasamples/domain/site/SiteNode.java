@@ -15,8 +15,6 @@ public class SiteNode extends AbstractAuditingEntity {
     private long id;
     @Column(name = "site_id")
     private long siteId;
-    @Column(name = "status")
-    private boolean status;
     @Column(name = "site_node_comments")
     private String siteNodeComments;
     @Column(name = "site_node_ip")
@@ -38,15 +36,6 @@ public class SiteNode extends AbstractAuditingEntity {
         this.siteId = siteId;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-
     public String getSiteNodeIP() {
         return siteNodeIP;
     }
@@ -62,4 +51,5 @@ public class SiteNode extends AbstractAuditingEntity {
     public void setSiteNodeComments(String siteNodeComments) {
         this.siteNodeComments = siteNodeComments;
     }
+
 }
