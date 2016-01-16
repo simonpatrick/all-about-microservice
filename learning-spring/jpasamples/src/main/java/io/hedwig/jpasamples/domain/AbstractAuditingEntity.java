@@ -6,13 +6,11 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
-import javax.persistence.EntityListeners;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
-import java.time.ZonedDateTime;
+import java.util.Date;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
@@ -28,7 +26,9 @@ public abstract class AbstractAuditingEntity extends AbstractStatusEntity{
     @NotNull
     @Column(name = "created_date", nullable = false)
     @JsonIgnore
-    private ZonedDateTime createdDate = ZonedDateTime.now();
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private Date createdDate;
 
     @LastModifiedBy
     @Column(name = "last_modified_by", length = 50)
@@ -38,7 +38,9 @@ public abstract class AbstractAuditingEntity extends AbstractStatusEntity{
     @LastModifiedDate
     @Column(name = "last_modified_date")
     @JsonIgnore
-    private ZonedDateTime lastModifiedDate = ZonedDateTime.now();
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate ;
 
     public String getCreatedBy() {
         return createdBy;
@@ -48,13 +50,7 @@ public abstract class AbstractAuditingEntity extends AbstractStatusEntity{
         this.createdBy = createdBy;
     }
 
-    public ZonedDateTime getCreatedDate() {
-        return createdDate;
-    }
 
-    public void setCreatedDate(ZonedDateTime createdDate) {
-        this.createdDate = createdDate;
-    }
 
     public String getLastModifiedBy() {
         return lastModifiedBy;
@@ -64,11 +60,19 @@ public abstract class AbstractAuditingEntity extends AbstractStatusEntity{
         this.lastModifiedBy = lastModifiedBy;
     }
 
-    public ZonedDateTime getLastModifiedDate() {
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    public void setLastModifiedDate(ZonedDateTime lastModifiedDate) {
+    public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
 }

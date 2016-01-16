@@ -15,6 +15,6 @@ public interface ServerAddlAttrValueRepository
         extends JpaRepository<ServerAdditionalAttributeValue,Long> {
 
     Optional<List<ServerAdditionalAttributeValue>>
-    findServerInfoByServerInfoAndStatus(String serveInfoId,boolean status);
+    findServerInfoByServerInfoIdAndStatus(String serveInfoId,boolean status);
 
 }

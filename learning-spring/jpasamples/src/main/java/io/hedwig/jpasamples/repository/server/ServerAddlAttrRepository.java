@@ -14,6 +14,6 @@ import java.util.Optional;
 public interface ServerAddlAttrRepository extends JpaRepository<ServerAdditionalAttribute,Long> {
 
     Optional<List<ServerAdditionalAttribute>>
-        findServerAddlAttrValuesByServerIdAndStatus(@Param("serverInfoId")Long serverInfoId,boolean status);
+        findServerAddlAttrByServerTypeAndStatus(String serverType,boolean status);
 
 }

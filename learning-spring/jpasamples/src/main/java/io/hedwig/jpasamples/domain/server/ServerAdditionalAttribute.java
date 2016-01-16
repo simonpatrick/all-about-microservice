@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Table(name="server_additional_attribute")
 public class ServerAdditionalAttribute  extends AbstractAuditingEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotNull

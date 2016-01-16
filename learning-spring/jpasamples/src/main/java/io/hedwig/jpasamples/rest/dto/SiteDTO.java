@@ -1,24 +1,16 @@
-package io.hedwig.jpasamples.domain.site;
+package io.hedwig.jpasamples.rest.dto;
 
-import io.hedwig.jpasamples.domain.AbstractAuditingEntity;
-
-import javax.persistence.*;
+import javax.persistence.Column;
 
 /**
- * Created by patrick on 16/1/15.
+ * Created by patrick on 16/1/16.
  */
-@Entity
-@Table(name="site")
-public class Site extends AbstractAuditingEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SiteDTO {
     private long id;
-    @Column(name = "site_name")
     private String siteName;
-    @Column(name = "site_domain_name")
     private String siteDomainName;
-    @Column(name = "site_comments")
     private String siteComments;
+    private String status;
 
     public long getId() {
         return id;
@@ -52,4 +44,11 @@ public class Site extends AbstractAuditingEntity{
         this.siteComments = siteComments;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

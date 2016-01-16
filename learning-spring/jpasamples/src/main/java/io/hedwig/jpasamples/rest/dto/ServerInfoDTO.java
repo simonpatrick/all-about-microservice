@@ -1,5 +1,7 @@
 package io.hedwig.jpasamples.rest.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.hedwig.jpasamples.domain.server.ServerAdditionalAttributeValue;
 import io.hedwig.jpasamples.domain.server.ServerInfo;
 
@@ -13,7 +15,11 @@ import java.util.Map;
 /**
  * Created by patrick on 16/1/15.
  */
+
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServerInfoDTO {
+    @JsonIgnore
     private long id;
     private String serverName;
     private String serverIP;

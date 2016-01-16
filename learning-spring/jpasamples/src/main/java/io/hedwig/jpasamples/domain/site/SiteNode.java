@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name = "site_node")
 public class SiteNode extends AbstractAuditingEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "site_id")
     private long siteId;

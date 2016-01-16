@@ -2,6 +2,7 @@ package io.hedwig.jpasamples.tools;
 
 import com.google.common.collect.Lists;
 
+import javax.validation.constraints.NotNull;
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  */
 public class CollectionsHelper {
 
-    public static List<Long> parseToList(String ids,String separator){
+    public static List<Long> parseToList(@NotNull String ids,String separator){
         String[] idArray=ids.split(separator);
         List<Long> result =Lists.newArrayList();
         for (String id : idArray) {

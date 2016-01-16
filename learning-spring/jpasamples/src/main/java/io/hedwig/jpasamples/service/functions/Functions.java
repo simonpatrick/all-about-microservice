@@ -3,6 +3,7 @@ package io.hedwig.jpasamples.service.functions;
 import io.hedwig.jpasamples.domain.AbstractAuditingEntity;
 
 import java.time.ZonedDateTime;
+import java.util.Date;
 import java.util.function.Function;
 
 /**
@@ -16,9 +17,9 @@ public class Functions {
         return t -> {
 
             t.setCreatedBy("tester123");
-            t.setCreatedDate(ZonedDateTime.now());
+            t.setCreatedDate(new Date());
             t.setLastModifiedBy("tester123");
-            t.setLastModifiedDate(ZonedDateTime.now());
+            t.setLastModifiedDate(new Date());
             return (R)t;
         };
     }

@@ -1,6 +1,5 @@
 package io.hedwig.jpasamples.repository.site;
 
-import io.hedwig.jpasamples.domain.server.ServerAdditionalAttribute;
 import io.hedwig.jpasamples.domain.site.Site;
 import org.springframework.data.jpa.repository.JpaRepository;
 
