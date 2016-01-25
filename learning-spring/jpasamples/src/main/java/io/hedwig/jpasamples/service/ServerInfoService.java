@@ -64,6 +64,13 @@ public class ServerInfoService {
                 .collect(Collectors.toList());
     }
 
+    public ServerInfo save(ServerInfo info){
+        return this.serverInfoRepository.save(info);
+    }
+
+    public void delete(ServerInfo info){
+         this.serverInfoRepository.delete(info);
+    }
 
     public ServerInfoRepository getServerInfoRepository() {
         return serverInfoRepository;
