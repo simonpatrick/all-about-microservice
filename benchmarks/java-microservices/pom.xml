@@ -13,6 +13,7 @@
         <module>dbversions</module>
         <module>cmdb</module>
         <module>api-testerspace</module>
+        <module>blog</module>
     </modules>
     <packaging>pom</packaging>
 
