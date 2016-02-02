@@ -14,6 +14,8 @@
         <module>cmdb</module>
         <module>api-testerspace</module>
         <module>blog</module>
+        <module>todo-mongo</module>
+        <module>uploadsamples</module>
     </modules>
     <packaging>pom</packaging>
 
