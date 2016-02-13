@@ -14,5 +14,6 @@ touch app/__init__.py
 mkdir -p config
 mkdir tests
 mkdir deploy
+mkdir db
 touch deploy/__init__.py
 touch config/__init__.py
