@@ -28,9 +28,7 @@ class ZabbixClient:
     }
 
     def __init__(self, session=None, timeout=None):
-        self.user_name, self.default_user_name = '110863', '110863'
-        self.password, self.default_password = '123456', '123456'
-        self.zabbix_api_url = 'http://{0}/api_jsonrpc.php'.format('java.zabbix.dooioo.com')
+
         if session:
             self.session = session
         else:
@@ -65,14 +63,14 @@ class ZabbixClient:
     def api_version(self):
         return self.apiinfo.version()
 
-    def confimport(self, format='', source='', rules=''):
-        """Alias for configuration.import because it clashes with
-           Python's import reserved keyword"""
-
-        return self.do_request(
-            method="configuration.import",
-            params={"format": format, "source": source, "rules": rules}
-        )['result']
+    # def confimport(self, format='', source='', rules=''):
+    #     """Alias for configuration.import because it clashes with
+    #        Python's import reserved keyword"""
+    #
+    #     return self.do_request(
+    #         method="configuration.import",
+    #         params={"format": format, "source": source, "rules": rules}
+    #     )['result']
 
     def do_request(self, method, params=None):
         request_json = {
